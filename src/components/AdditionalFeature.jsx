@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import {addFeature} from "../actions";
 
-const AdditionalFeature = (props) => {
+function AdditionalFeature (props) {
   const {feature, addFeature} = props,
         {name, price} = feature;
   console.log(props, feature);
