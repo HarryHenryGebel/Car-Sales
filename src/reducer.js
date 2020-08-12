@@ -21,10 +21,12 @@ export default function reducer (state = initialState, action) {
   switch(action.type) {
   case ADD_FEATURE:
     return {...state,
+            additionalPrice: state.additionalPrice + state.car.price,
             car: {...state.car,
                   features: [...state.car.features, action.payload]}};
   case REMOVE_FEATURE:
     return {...state,
+            additionalPrice: state.additionalPrice - state.car.price,
             car: {...state.car,
                   features: state.car.feature.filter(
                     (feature) => feature.id !== action.payload.id)}};
