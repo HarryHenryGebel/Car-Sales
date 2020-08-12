@@ -7,7 +7,7 @@ import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
 function App (props) {
-  const {car, additionalFeatures, additionalPrice} = props;
+  const {car, additionalPrice} = props;
 
   return (
     <div className="boxes">
