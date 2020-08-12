@@ -6,7 +6,6 @@ import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
 export default function App (props) {
-  const {car, additionalPrice} = props;
 
   return (
     <div className="boxes">
@@ -16,7 +15,7 @@ export default function App (props) {
       </div>
       <div className="box">
         <AdditionalFeatures/>
-        <Total car={car} additionalPrice={additionalPrice} />
+        <Total/>
       </div>
     </div>
   );
