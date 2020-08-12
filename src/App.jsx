@@ -13,7 +13,7 @@ function App (props) {
     <div className="boxes">
       <div className="box">
         <Header/>
-        <AddedFeatures car={car} />
+        <AddedFeatures/>
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={additionalFeatures} />
@@ -30,7 +30,6 @@ function mapStateToProps (state) {
     additionalPrice: state.additionalPrice
   };
 }
-
 export default connect(mapStateToProps, {})(App);
 
-//  LocalWords:  mgl
+//  LocalWords:  mgl AddedFeatures
