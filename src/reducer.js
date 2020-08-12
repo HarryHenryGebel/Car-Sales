@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import {REMOVE_FEATURE} from "./actions";
 
 const initialState = {
     additionalPrice: 0,
@@ -17,9 +17,13 @@ const initialState = {
     ]
 };
 
-function reducer () {
-  return initialState;
+export default function reducer (state = initialState, action) {
+  switch(action.type) {
+  case REMOVE_FEATURE:
+    return {...state,
+            features: state.features.filter(
+              feature => feature.id !== action.payload.id)};
+  default:
+    return state;
+  }
 }
-
-const store = createStore(reducer);
-export default store;
