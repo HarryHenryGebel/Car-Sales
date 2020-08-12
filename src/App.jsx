@@ -16,7 +16,7 @@ function App (props) {
         <AddedFeatures/>
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={additionalFeatures} />
+        <AdditionalFeatures/>
         <Total car={car} additionalPrice={additionalPrice} />
       </div>
     </div>
@@ -26,7 +26,6 @@ function App (props) {
 function mapStateToProps (state) {
   return {
     car: state.car,
-    additionalFeatures: state.additionalFeatures,
     additionalPrice: state.additionalPrice
   };
 }
