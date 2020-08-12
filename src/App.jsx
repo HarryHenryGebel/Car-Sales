@@ -12,7 +12,7 @@ function App (props) {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={car} />
+        <Header/>
         <AddedFeatures car={car} />
       </div>
       <div className="box">
