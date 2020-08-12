@@ -24,6 +24,10 @@ export default function reducer (state = initialState, action) {
             features: state.features.filter(
               feature => feature.id !== action.payload.id)};
   default:
-    return state;
+    // return state if it is called by redux, otherwise throw error
+    if (action.type.includes("@@redux"))
+      return state;
+    else
+      throw Error(`Invalid action "{$action.type}"`);
   }
 }
