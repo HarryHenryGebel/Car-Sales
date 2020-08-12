@@ -4,14 +4,16 @@ import { connect } from 'react-redux';
 import AdditionalFeature from './AdditionalFeature';
 
 function AdditionalFeatures (props) {
-  const {numberOfFeatures, additionalFeatures} = props;
+  const {additionalFeatures, features, numberOfFeatures} = props;
 
   return (
     <div className="content">
       <h4>Additional Features</h4>
       {numberOfFeatures ? (
         <ol type="1">
-          {additionalFeatures.map(item => (
+          {additionalFeatures
+           .filter(item => !features.includes(item))
+           .map(item => (
             <AdditionalFeature key={item.id} feature={item} />
           ))}
         </ol>
@@ -24,6 +26,7 @@ function AdditionalFeatures (props) {
 
 function mapStateToProps (state) {
   return {
+    features: state.car.features,
     additionalFeatures: state.additionalFeatures,
     numberOfFeatures: state.additionalFeatures.length
   };
