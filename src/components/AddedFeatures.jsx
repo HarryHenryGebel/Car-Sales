@@ -12,7 +12,7 @@ function AddedFeatures (props) {
       {features.length ? (
         <ol type="1">
           {features.map(item => (
-            <AddedFeature key={item.id}/>
+            <AddedFeature key={item.id} feature={item}/>
           ))}
         </ol>
       ) : (
