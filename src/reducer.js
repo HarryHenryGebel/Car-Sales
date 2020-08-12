@@ -1,4 +1,4 @@
-import {REMOVE_FEATURE} from "./actions";
+import {ADD_FEATURE, REMOVE_FEATURE} from "./actions";
 
 const initialState = {
     additionalPrice: 0,
@@ -25,8 +25,10 @@ export default function reducer (state = initialState, action) {
                   features: [...state.car.features, action.payload]}};
   case REMOVE_FEATURE:
     return {...state,
-            features: state.features.filter(
-              feature => feature.id !== action.payload.id)};
+            car: {...state.car,
+                  features: state.car.feature.filter(
+                    (feature) => feature.id !== action.payload.id)}};
+
   default:
     // return state if it is called by redux, otherwise throw error
     if (action.type.includes("@@redux"))
