@@ -6,7 +6,6 @@ import {addFeature} from "../actions";
 function AdditionalFeature (props) {
   const {feature, addFeature} = props,
         {name, price} = feature;
-  console.log(props, feature);
 
   return (
     <li>
