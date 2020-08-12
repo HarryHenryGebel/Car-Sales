@@ -14,8 +14,8 @@ function AdditionalFeatures (props) {
           {additionalFeatures
            .filter(item => !features.includes(item))
            .map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
-          ))}
+             <AdditionalFeature key={item.id} feature={item} />
+           ))}
         </ol>
       ) : (
         <p>Nice looking car!</p>
