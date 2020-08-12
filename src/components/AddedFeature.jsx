@@ -8,8 +8,9 @@ function AddedFeature (props) {
 
   return (
     <li>
-      onClick={() => removeFeature(feature)}
-      <button className="button">X</button>
+      <button className="button" onClick={() => removeFeature(feature)}>
+        X
+      </button>
       {feature.name}
     </li>
   );
